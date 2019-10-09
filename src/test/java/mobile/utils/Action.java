@@ -20,12 +20,4 @@ public class Action {
                 .withTimeout(ofMinutes(TIME_OUT));
     }
 
-    public void chooseElementFromList(List <WebElement> webElementList, String option) {
-        for (WebElement webElement : webElementList) {
-            if (webElement.getText().equalsIgnoreCase(option)) {
-                webElement.click();
-                break;
-            }
-        }
-    }
 }

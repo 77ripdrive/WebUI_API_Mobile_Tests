@@ -8,13 +8,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 
 import java.net.URL;
 import java.util.Optional;
 import java.util.function.UnaryOperator;
 
-public class WebDriverProvader implements IWebDriver {
+@Component
+public class WebDriverProvider implements IWebDriver {
 
     private final static ThreadLocal<WebDriver> CACHE = ThreadLocal.withInitial(() -> null);
 
