@@ -1,0 +1,30 @@
+version: '2.1'
+services:
+
+  hub:
+    image: selenium/hub:3.14.0-gallium
+    ports:
+      - 4444:4444
+      - 5902:5902
+    healthcheck:
+      test: curl -sS http://127.0.0.1 || exit 1
+      interval: 7s
+      timeout: 10s
+      retries: 4
+
+  chrome:
+    image: selenium/node-chrome:3.14.0-gallium
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - hub
+    environment:
+      HUB_HOST: hub
+  firefox:
+    image: selenium/node-firefox:3.14.0-gallium
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - hub
+    environment:
+      HUB_HOST: hub
