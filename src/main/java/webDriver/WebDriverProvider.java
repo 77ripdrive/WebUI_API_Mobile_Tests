@@ -16,7 +16,7 @@ import java.util.Optional;
 import java.util.function.UnaryOperator;
 
 @Component
-public class WebDriverProvider implements IWebDriver {
+public class WebDriverProvider implements IWebDriverProvider {
 
     private final static ThreadLocal<WebDriver> CACHE = ThreadLocal.withInitial(() -> null);
 

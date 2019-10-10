@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class OpenPageFalidation extends BaseMobile {
+public class OpenPageValidation extends BaseMobile {
 
     @Test
     public void simpleDemoTest()

@@ -2,7 +2,7 @@ package webDriver;
 
 import org.openqa.selenium.WebDriver;
 
-public interface IWebDriver {
+public interface IWebDriverProvider {
     WebDriver get();
 
     void closeDriver();

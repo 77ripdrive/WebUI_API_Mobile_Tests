@@ -9,7 +9,8 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @Configuration
 @ComponentScan(basePackages = "src")
 @PropertySource(value = {"classpath:browser.properties",
-        "classpath:mobileSauceLab.properties"}, encoding = "UTF-8")
+        "classpath:mobileSauceLab.properties", "classpath:customer.properties",
+        "classpath:junit-platform.properties"}, encoding = "UTF-8")
 public class AppConfig {
     @Bean
     public static PropertySourcesPlaceholderConfigurer placeholderConfigurer() {

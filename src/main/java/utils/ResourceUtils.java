@@ -4,12 +4,14 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.EnumerablePropertySource;
 import org.springframework.core.env.PropertySource;
+import org.springframework.stereotype.Component;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Properties;
 import java.util.Set;
 
+@Component
 public class ResourceUtils {
     public DesiredCapabilities setUpAppiumDriver(ConfigurableEnvironment env, String prefix) {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
