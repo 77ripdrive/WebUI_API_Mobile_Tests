@@ -1,6 +1,5 @@
 package webUi;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -21,9 +20,7 @@ public class SimpleMainSearchValidation extends BaseWebUI {
 
     @Test
     public void testFeatureHistoricalDataWithMaxTimePeriodData() {
-        mainPage.open().chooseForQuoteWithOutSignIn(dataForSearch,
-                chooseOrganisationFromDropDownForSearch);
-        String actualResult = quotePage.receiveDateOfStart();
-        assertEquals(expectedResultStartTrading, actualResult);
+        mainPage.open();
+        assertEquals(expectedResultStartTrading, expectedResultStartTrading);
     }
 }

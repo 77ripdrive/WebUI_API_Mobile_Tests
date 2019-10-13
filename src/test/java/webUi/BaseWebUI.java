@@ -6,7 +6,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
-import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.test.context.ContextConfiguration;
@@ -16,16 +15,13 @@ import selenium.pages.QuotePage;
 import spring.AppConfig;
 import webDriver.IWebDriverProvider;
 
-import javax.annotation.PostConstruct;
-
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = AppConfig.class)
-@Execution(ExecutionMode.CONCURRENT)
+//@Execution(ExecutionMode.CONCURRENT)
 public class BaseWebUI {
 
-    protected WebDriver driver;
 
-    @Autowired(required=true)
+    @Autowired
     IWebDriverProvider webDriverProvider;
 
     @Autowired
@@ -41,13 +37,12 @@ public class BaseWebUI {
     private boolean dockerEnable;
 
 
-    @PostConstruct
     @SuppressFBWarnings
     @BeforeEach
     public void setUp() {
 
-        driver = webDriverProvider.get();
-        driver.manage().window().maximize();
+        webDriverProvider = (IWebDriverProvider) webDriverProvider.get();
+        webDriverProvider.get().manage().window().maximize();
     }
 
     @AfterEach
