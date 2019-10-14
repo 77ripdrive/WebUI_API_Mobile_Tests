@@ -38,7 +38,8 @@ dependencies {
     implementation group: 'io.rest-assured', name: 'rest-assured', version: '3.0.7'
     implementation group: 'org.json', name: 'json', version: '20090211'
     implementation group: 'io.appium', name: 'java-client', version: '7.0.0'
-
+    implementation group: 'com.codeborne', name: 'selenide', version: '5.2.4'
+    
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
     testImplementation group: 'io.qameta.allure', name: 'allure-junit5', version: '2.12.1'
@@ -76,4 +77,4 @@ task testWebUi(type: Test) {
     testLogging {
         events "passed", "skipped", "failed"
     }
-}
+} 

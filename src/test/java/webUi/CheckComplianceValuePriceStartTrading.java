@@ -27,15 +27,11 @@ public class CheckComplianceValuePriceStartTrading extends BaseWebUITest {
     private String expectedResultPriceStartSP500;
 
 
-    @BeforeEach
-    void preCondition() {
+    @Test
+    public void checkForCorrectOrderInResultTable() {
         stepsForFeatureWithQuote
             .recentQuote()
             .chooseOrganisation(dataForRecentQuotePage);
-    }
-
-    @Test
-    public void checkForCorrectOrderInResultTable() {
         Double actualResult = stepsForFeatureWithQuote.getValueOfPriceStartTrading(dateTimeOldPeriod,
             dateForSearchValueStartTrading);
         assertEquals(java.util.Optional.of(Double.parseDouble(expectedResultPriceStartSP500)), actualResult);

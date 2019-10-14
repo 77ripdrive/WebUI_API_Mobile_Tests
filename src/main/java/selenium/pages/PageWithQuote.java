@@ -102,7 +102,7 @@ public class PageWithQuote extends BaseWebPage
     {
         setDateOfTimePeriod(dateOldTime);
         frequentlyDaily.click();
-        frequentlyWeekly.click();;
+        frequentlyWeekly.click();
         buttonApply.click();
         return $(LocatorCreator.createXpath(PRE_LOCATOR_FOR_START_VALUE, Actions.dateFormat(dateForSearch))).getText();
     }

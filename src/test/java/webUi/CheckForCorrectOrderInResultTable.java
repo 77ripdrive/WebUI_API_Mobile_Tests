@@ -24,17 +24,10 @@ public class CheckForCorrectOrderInResultTable extends BaseWebUITest
     @Value("${choose-organisation-from-drop-down-for-search}")
     private String chooseOrganisationFromDropDownForSearch;
 
-
-    @BeforeEach
-    void preCondition()
-    {
-        stepsForFeatureWithQuote.openMainPage().chooseForQuoteWithOutSignIn(dataForSearch,
-                chooseOrganisationFromDropDownForSearch);
-    }
-
     @Test
     public void checkForCorrectOrderInResultTable()
-    {
+    {stepsForFeatureWithQuote.openMainPage().chooseForQuoteWithOutSignIn(dataForSearch,
+        chooseOrganisationFromDropDownForSearch);
         stepsForFeatureWithQuote.receiveResultTableWithMaxMinValue(dataForSearchTrading);
         boolean result = stepsForFeatureWithQuote.getValueMaxCostLeftColumn(dataForSearchTrading) >= stepsForFeatureWithQuote
                 .getValueMinCostRightColumn(dataForSearchTrading);

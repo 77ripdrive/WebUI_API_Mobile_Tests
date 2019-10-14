@@ -30,17 +30,12 @@ public class CheckCompliancePriceFromQuoteLookUp extends BaseWebUITest
     @Value("${date-for-search-value-start-trading}")
     private String dateForSearchValueStartTrading;
 
-    @BeforeEach
-    void preCondition()
-    {
-        stepsForFeatureWithQuote
-                .openMainPage()
-                .quoteLookUp(dataForLeftMenuSearch,chooseOrganisationFromMenu);
-    }
 
     @Test
     public void checkForCorrectOrderInResultTable()
-    {
+    {   stepsForFeatureWithQuote
+        .openMainPage()
+        .quoteLookUp(dataForLeftMenuSearch,chooseOrganisationFromMenu);
         Double actualResult = stepsForFeatureWithQuote.getValueOfPriceStartTrading(dateTimeOldPeriod,
                 dateForSearchValueStartTrading);
         assertEquals(java.util.Optional.of(Double.parseDouble(expectedResultPriceStartTrading)), actualResult);
